@@ -23,7 +23,7 @@ class FileUtils(object):
         file_type = self._get_file_type(self.path)
         if file_type != self.WAV:
             wav_path = "{stripped}.wav".format(stripped=self.path.replace(file_type, ""))
-            subprocess.call("ffmpeg -i {path} -ar 8000 -ac 1 {wav}".format(path=self.path, wav=wav_path), shell=True)
+            subprocess.call("ffmpeg -i {path} -ac 1 {wav}".format(path=self.path, wav=wav_path), shell=True)
         else:
             wav_path = self.path
 
